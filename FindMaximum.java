@@ -29,6 +29,7 @@ public class FindMaximum {
 		}
 		if(string3.compareTo(max) > 0) {
 			max = string3;
+
 		}
 		return max;
 	}
