@@ -1,35 +1,30 @@
-public class FindMaximum {
+import java.util.Arrays;
+
+public class FindMaximum<E extends Comparable<E>> {
 	
-	public Integer getMaximum(Integer integer1, Integer integer2, Integer integer3) {
-		Integer max = integer1;
-		if(integer2.compareTo(max) > 0) {
-			max = integer2;
-		}
-		if(integer3.compareTo(max) > 0) {
-			max = integer3;
-		}
-		return max;
+	E[] values;
+	
+	public FindMaximum(E ...values) {
+		this.values = values;
 	}
-
-	public Float getMaximum(Float float1, Float float2, Float float3) {
-		Float max = float1;
-		if(float2.compareTo(max) > 0) {
-			max = float2;
-		}
-		if(float3.compareTo(max) > 0) {
-			max = float3;
-		}
-		return max;
+	
+	public static <E extends Comparable<E>> E getMaximum(E[] values) {
+		Arrays.sort(values);
+		int size = values.length;
+		E max = values[size-1];
+		printMax(values, max);
+		return max;	
 	}
-
-	public String getMaximum(String string1, String string2, String string3) {
-		String max = string1;
-		if(string2.compareTo(max) > 0) {
-			max = string2;
+	
+	public E getMaximum() {
+		return FindMaximum.getMaximum(values);
+	}
+	
+	public static <E> void printMax(E[] values, E max) {
+		System.out.print("Maximum of ");
+		for(E value: values) {
+			System.out.print(value + " ");
 		}
-		if(string3.compareTo(max) > 0) {
-			max = string3;
-		}
-		return max;
+		System.out.println("is " + max);
 	}
 }
