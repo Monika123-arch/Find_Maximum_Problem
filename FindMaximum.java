@@ -1,9 +1,7 @@
 import java.util.Arrays;
 
-public class FindMaximum<E extends Comparable<E>> {
-	
+public class FindMaximum<E extends Comparable<E>> {	
 	E[] values;
-	
 	public FindMaximum(E ...values) {
 		this.values = values;
 	}
@@ -18,6 +16,7 @@ public class FindMaximum<E extends Comparable<E>> {
 	
 	public E getMaximum() {
 		return FindMaximum.getMaximum(values);
+
 	}
 	
 	public static <E> void printMax(E[] values, E max) {
@@ -26,5 +25,7 @@ public class FindMaximum<E extends Comparable<E>> {
 			System.out.print(value + " ");
 		}
 		System.out.println("is " + max);
+
 	}
+	
 }
